@@ -58,7 +58,6 @@ public class ButtonController : MonoBehaviour
 
 	public void EnableButton()
 	{
-		Debug.Log("====");
 		Button button = GetComponent<Button>() as Button;
 		button.interactable = true;
 	}

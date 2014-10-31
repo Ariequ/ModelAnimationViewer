@@ -14,8 +14,6 @@ public class AnimationInfo : MonoBehaviour
 	// Use this for initialization
 	void Awake ()
 	{
-		Debug.Log("awake========");
-
 		animator = GetComponent<Animator> ();
 		info = GameObject.Find("AnimationNameContent").GetComponent<Text>();
 		animationList = GameObject.Find("AnimationList");

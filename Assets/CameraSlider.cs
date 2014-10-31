@@ -10,19 +10,21 @@ public class CameraSlider : MonoBehaviour
 	void Start ()
 	{
 		Camera.main.fieldOfView = originFiledOfView = 64;
-		slider = GetComponent<Slider>();
+		slider = GetComponent<Slider> ();
 	}
 
-	public void OnValueChange (Slider slider)
+	public void OnValueChange ()
 	{
-		Camera.main.fieldOfView = Mathf.Max(0.1f, originFiledOfView + (slider.value - 0.5f) * 200);
+		if (slider == null) {
+			return;
+		}
+		Camera.main.fieldOfView = Mathf.Max (0.1f, originFiledOfView + (slider.value - 0.5f) * 200);
 	}
 
-	public void Update()
+	public void Update ()
 	{
-		if (Input.GetAxis("Mouse ScrollWheel") != 0)
-		{
-			slider.value += Input.GetAxis("Mouse ScrollWheel") / 20;
+		if (Input.GetAxis ("Mouse ScrollWheel") != 0) {
+			slider.value += Input.GetAxis ("Mouse ScrollWheel") / 20;
 		}
 	}
 }
