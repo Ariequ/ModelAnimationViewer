@@ -6,10 +6,12 @@ public class ButtonController : MonoBehaviour
 {
 	private string PrefabPath = "Prefabs";
 	GameObject root;
+	AnimationSpeedController animationSpeedController;
 
 	void Start()
 	{
 		root = GameObject.Find("root");
+		animationSpeedController = root.GetComponent<AnimationSpeedController>();
 	}
 
 	public void DrawPrefab()
@@ -50,6 +52,8 @@ public class ButtonController : MonoBehaviour
 		obj.transform.parent = root.transform;
 		obj.transform.position = Vector3.zero;
 		obj.transform.rotation = Quaternion.identity;
+
+		animationSpeedController.OnAnimationChange();
 	}
 
 	public void EnableButton()

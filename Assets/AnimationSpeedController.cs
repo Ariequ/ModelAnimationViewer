@@ -8,8 +8,7 @@ public class AnimationSpeedController : MonoBehaviour
 
 	void Start()
 	{
-		Animator animator = GetComponentInChildren<Animator>();
-		speed.text = animator.speed + "";
+		speed.text = "1";
 	}
 
 	public void OnValueChange (Slider slider)
@@ -32,5 +31,8 @@ public class AnimationSpeedController : MonoBehaviour
 		speed.text = animator.speed + "";
 	}
 
-
+	public void OnAnimationChange()
+	{
+		speed.text = "1";
+    }
 }

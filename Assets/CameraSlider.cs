@@ -9,7 +9,7 @@ public class CameraSlider : MonoBehaviour
 
 	void Start ()
 	{
-		Camera.main.fieldOfView = originFiledOfView = 13;
+		Camera.main.fieldOfView = originFiledOfView = 64;
 		slider = GetComponent<Slider>();
 	}
 
